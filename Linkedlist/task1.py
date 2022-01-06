@@ -5,6 +5,7 @@ class Node:
         self.value = v
         self.next = None
 
+
 class LinkedList:
 
     def __init__(self):
@@ -35,14 +36,15 @@ class LinkedList:
     '''
     1.4. Добавьте в класс LinkedList метод поиска всех узлов по конкретному значению
      (возвращается стандартный питоновский список найденных узлов).
-    ''' 
+    '''
+
     def find_all(self, val):
         result = []
-        node = self.head # находимся в начале списка
-        while node is not None: # итерация по списку
+        node = self.head  # находимся в начале списка
+        while node is not None:  # итерация по списку
             if node.value == val:
                 result.append(node)
-            node = node.next    
+            node = node.next
         return result
 
     '''
@@ -50,10 +52,11 @@ class LinkedList:
     где флажок all=False по умолчанию -- удаляем только первый нашедшийся элемент.
     1.2. Дополните этот метод удалением всех узлов по конкретному значению (флажок all=True).
     '''
+
     def delete(self, val, all=False):
-        node = self.head # находимся в начале списка
-        previous = None # задаем предыдущее значение
-        if self.head is None: # если список пустой сразу выходим
+        node = self.head  # находимся в начале списка
+        previous = None  # задаем предыдущее значение
+        if self.head is None:  # если список пустой сразу выходим
             return None
 
         while node is not None:
@@ -64,7 +67,7 @@ class LinkedList:
                     if node is self.tail:
                         self.tail = None
                 else:
-                    if node is self.tail: # если узел последний то смещаем хвост назад
+                    if node is self.tail:  # если узел последний то смещаем хвост назад
                         self.tail = previous
                     previous.next = node.next
 
@@ -82,10 +85,10 @@ class LinkedList:
 
     # 1.5. Добавьте в класс LinkedList метод вычисления текущей длины списка
     def len(self):
-        count= 0
-        node = self.head
+        count = 0
         if self.head is None:
             return 0
+        node = self.head
         while node is not None:
             count += 1
             node = node.next
@@ -96,20 +99,19 @@ class LinkedList:
         if self.head is None:
             self.head = newNode
             self.tail = newNode
-            
+            return None
+
         if afterNode is None:
             self.head, newNode.next = newNode, self.head
             if newNode.next is None:
                 self.tail = newNode
-        else: 
+        else:
             node = self.head
             while node is not None:
                 if node is afterNode:
                     if node is self.tail:
                         self.tail = newNode
-                    node.next, newNode.next = newNode, node.next 
+                    node.next, newNode.next = newNode, node.next
                     return None
                 node = node.next
-        return None                                      
-
-
+        return None
