@@ -54,11 +54,13 @@ class LinkedList:
     '''
 
     def delete(self, val, all=False):
-        node = self.head  # находимся в начале списка
-        previous = None  # задаем предыдущее значение
+
         if self.head is None:  # если список пустой сразу выходим
             return None
 
+        '''    
+        node = self.head  # находимся в начале списка
+        previous = None  # задаем предыдущее значение
         while node is not None:
             if node.value == val:
                 # если это первый элемент то сместить голову, хвост = None
@@ -77,8 +79,30 @@ class LinkedList:
             previous = node
             node = node.next
         return None
+        '''
 
+        while self.head.value == val:
+            if self.head.next == None:
+                self.__init__()
+                return
+            self.head = self.head.next
+            if all is False:
+                return
+
+        node = self.head
+        while node is not self.tail:
+            if node.next.value == val:
+                if node.next.next == None:
+                    node.next = None
+                    self.tail = node
+                    return
+                node.next = node.next.next
+                if not all:
+                    return
+                continue
+            node = node.next
         # 1.3. Добавьте в класс LinkedList метод очистки всего содержимого (создание пустого списка)
+
     def clean(self):
         self.head = None
         self.tail = None
