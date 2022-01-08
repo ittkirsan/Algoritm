@@ -58,29 +58,6 @@ class LinkedList:
         if self.head is None:  # если список пустой сразу выходим
             return None
 
-        '''    
-        node = self.head  # находимся в начале списка
-        previous = None  # задаем предыдущее значение
-        while node is not None:
-            if node.value == val:
-                # если это первый элемент то сместить голову, хвост = None
-                if node is self.head:
-                    self.head = node.next
-                    if node is self.tail:
-                        self.tail = None
-                else:
-                    if node is self.tail:  # если узел последний то смещаем хвост назад
-                        self.tail = previous
-                    previous.next = node.next
-
-                if all is False:
-                    return None
-
-            previous = node
-            node = node.next
-        return None
-        '''
-
         while self.head.value == val:
             if self.head.next == None:
                 self.__init__()
