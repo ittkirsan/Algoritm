@@ -78,8 +78,8 @@ class LinkedList:
                     return
                 continue
             node = node.next
-        # 1.3. Добавьте в класс LinkedList метод очистки всего содержимого (создание пустого списка)
 
+    # 1.3. Добавьте в класс LinkedList метод очистки всего содержимого (создание пустого списка)
     def clean(self):
         self.head = None
         self.tail = None
