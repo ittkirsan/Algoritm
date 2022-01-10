@@ -1,7 +1,7 @@
 from task1 import LinkedList, Node
 
 
-def SumEqualLinkedList(LList1: LinkedList, LList2: LinkedList):
+def SumEqualLinkedList(LList1: LinkedList, LList2: LinkedList) -> LinkedList:
     LList_result: LinkedList = LinkedList()
     if LList1.len() == LList2.len():
         node1: Node = LList1.head  # встаем вначало списка 1
