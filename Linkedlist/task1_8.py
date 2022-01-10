@@ -1,4 +1,4 @@
-from typing import Any
+
 from task1 import LinkedList, Node
 
 
