@@ -1,4 +1,3 @@
-
 from task1 import LinkedList, Node
 
 
