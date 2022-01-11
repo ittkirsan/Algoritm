@@ -1,4 +1,4 @@
-
+'''Tесты для task2_10. Двунаправленный список c фиктивными узлами.'''
 import unittest
 import random
 from task2_10 import *

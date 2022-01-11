@@ -1,11 +1,14 @@
-
+'''Тесты для task2. Двунаправленный список.'''
 import unittest
 import random
 from task2 import Node, LinkedList2
 
 
 class TestLinkedList2(unittest.TestCase):
+    '''Класс для тестов LinkedList2'''
+
     def setUp(self):
+        '''Вводные инструкции'''
         self.empty_LinkedList2 = LinkedList2()
 
         self.LinkedList2_with_one_element = LinkedList2()
