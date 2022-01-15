@@ -19,6 +19,7 @@ class DynArray:
         return self.count
 
     def make_array(self, new_capacity: int):
+        '''Формирование блока памяти.'''
         return (new_capacity * ctypes.py_object)()
 
     def __getitem__(self, i):
@@ -27,6 +28,7 @@ class DynArray:
         return self.array[i]
 
     def resize(self, new_capacity):
+        '''Метод меняющий размер емкости буфера массива.'''
         new_array = self.make_array(new_capacity)
         for i in range(self.count):
             new_array[i] = self.array[i]
@@ -34,6 +36,7 @@ class DynArray:
         self.capacity = new_capacity
 
     def append(self, itm):
+        '''Метод добавляет элемент в конец массива.'''
         if self.count == self.capacity:
             self.resize(2*self.capacity)
         self.array[self.count] = itm
