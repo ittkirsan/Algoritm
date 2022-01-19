@@ -1,5 +1,5 @@
 import unittest
-from task4 import *
+from task4_stack_tail import *
 
 
 class TestStack(unittest.TestCase):
