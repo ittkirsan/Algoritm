@@ -1,5 +1,5 @@
 '''Программа реализации класса Стек'''
-from LList2 import LinkedList2, Node
+from LList2 import *
 
 
 class Stack:
@@ -14,7 +14,7 @@ class Stack:
 
     def pop(self):
         '''Метод удаления последнего элемента'''
-        if self.size() != 0:
+        if self.stack.len() != 0:
             result = self.stack.tail.value
             self.stack.del_tail()
             return result
@@ -25,7 +25,7 @@ class Stack:
         self.stack.add_in_tail(Node(value))
 
     def peek(self):
-        '''Метод показывает последнего элемента.'''
-        if self.size() != 0:
+        '''Метод показывает последний элемент.'''
+        if self.stack.len() != 0:
             return self.stack.tail.value
         return None

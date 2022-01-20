@@ -136,7 +136,7 @@ class LinkedList2:
             return
         else:
             tail = self.tail.prev
-            self.tail = self.tail.prev
+            self.tail = tail
             tail.next = None
             return
 
