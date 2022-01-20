@@ -8,7 +8,6 @@ def postfix(string: str):
     stack2 = Stack()
     length: int = len(string)-1
     while length >= 0:
-
         stack1.push(string[length])
         length -= 1
     while stack1.size() != 0:
