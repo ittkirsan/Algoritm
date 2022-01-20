@@ -20,6 +20,13 @@ def postfix(string: str):
         elif elem == "*":
             multiply: int = int(stack2.pop())*int(stack2.pop())
             stack2.push(multiply)
+        elif elem == "-":
+            difference: int = int(stack2.pop())-int(stack2.pop())
+            stack2.push(difference)
+        elif elem == "/":
+            division: int = int(stack2.pop())/int(stack2.pop())
+            stack2.push(division)
+
         elif elem == "=":
             return stack2.pop()
     return stack2.pop()

@@ -15,6 +15,9 @@ class TestPostfix(unittest.TestCase):
         self.assertEqual(postfix("1 2 3 4 + + + ="), 10)
         self.assertEqual(postfix("1 2 3 * *  ="), 6)
         self.assertEqual(postfix("1 2 + 3 *  ="), 9)
+        self.assertEqual(postfix("3 1 / ="), 1/3)
+        self.assertEqual(postfix("1 2 - 3 *  ="), 3)
+        self.assertEqual(postfix("1 5 + 3 * 36 /  ="), 2)
 
 
 if __name__ == '__main__':
