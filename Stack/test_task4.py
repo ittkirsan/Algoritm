@@ -47,6 +47,10 @@ class TestStack(unittest.TestCase):
         self.Stack.pop()
         self.assertEqual(0, self.Stack.size())
 
+    def test_empy_stack_peek(self):
+        stack = Stack()
+        self.assertIsNone(stack.peek())
+
 
 if __name__ == '__main__':
     unittest.main()

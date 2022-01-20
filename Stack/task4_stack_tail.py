@@ -1,5 +1,5 @@
 '''Программа реализации класса Стек'''
-from LList2 import *
+from LList2 import LinkedList2, Node
 
 
 class Stack:
@@ -18,8 +18,7 @@ class Stack:
             result = self.stack.tail.value
             self.stack.del_tail()
             return result
-        elif self.size() == 0:
-            return None
+        return None
 
     def push(self, value):
         '''Метод вставки в хвост.'''
@@ -29,5 +28,4 @@ class Stack:
         '''Метод показывает последнего элемента.'''
         if self.size() != 0:
             return self.stack.tail.value
-        else:
-            return None
+        return None
