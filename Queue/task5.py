@@ -1,4 +1,6 @@
+
 '''Программа реализации динамического массива.'''
+from typing import Any
 
 
 class Queue:
@@ -8,12 +10,16 @@ class Queue:
         '''Инициализация хранилища данных.'''
         self.queue = []
 
-    def enqueue(self, item):
-        # вставка в хвост
+    def enqueue(self, item: Any):
+        '''Метод вставки элемента в хвост очереди.'''
+        self.queue.append(item)
 
     def dequeue(self):
-        # выдача из головы
+        '''Метод выдачи элемента из головы очереди.'''
+        if self.size != 0:
+            return self.queue.pop(0)
         return None  # если очередь пустая
 
     def size(self):
-        return 0  # размер очереди
+        '''Метод определения длинны очереди.'''
+        return len(self.queue)
