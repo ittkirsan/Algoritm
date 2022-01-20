@@ -18,7 +18,8 @@ class Stack:
             result = self.stack.tail.value
             self.stack.del_tail()
             return result
-        return None
+        else:
+            return None
 
     def push(self, value):
         '''Метод вставки в хвост.'''
@@ -28,4 +29,5 @@ class Stack:
         '''Метод показывает последний элемент.'''
         if self.stack.len() != 0:
             return self.stack.tail.value
-        return None
+        else:
+            return None
