@@ -34,6 +34,10 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(self.queue.dequeue(), '7')
         self.assertEqual(1, self.queue.size())
 
+    def test_dequeue_empty(self):
+        self.queue = Queue()
+        self.assertIsNone(self.queue.dequeue())
+
 
 if __name__ == '__main__':
     unittest.main()

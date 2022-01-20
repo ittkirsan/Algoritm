@@ -16,7 +16,7 @@ class Queue:
 
     def dequeue(self):
         '''Метод выдачи элемента из головы очереди.'''
-        if self.size != 0:
+        if self.size() != 0:
             return self.queue.pop(0)
         return None  # если очередь пустая
 
