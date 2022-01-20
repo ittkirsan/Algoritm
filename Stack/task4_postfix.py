@@ -14,22 +14,17 @@ def postfix(string: str):
         elem: str = stack1.pop()
         if elem.isdecimal():
             stack2.push(elem)
-        elif elem == "+":
+        elif elem in "+-*/":
             x: int = int(stack2.pop())
             y: int = int(stack2.pop())
-            stack2.push(x+y)
-        elif elem == "*":
-            a: int = int(stack2.pop())
-            b: int = int(stack2.pop())
-            stack2.push(a*b)
-        elif elem == "-":
-            c: int = int(stack2.pop())
-            d: int = int(stack2.pop())
-            stack2.push(c-d)
-        elif elem == "/":
-            k: int = int(stack2.pop())
-            n: int = int(stack2.pop())
-            stack2.push(k/n)
+            if elem == "+":
+                stack2.push(x+y)
+            elif elem == "*":
+                stack2.push(x*y)
+            elif elem == "-":
+                stack2.push(x-y)
+            elif elem == "/":
+                stack2.push(x/y)
         elif elem == "=":
             return stack2.pop()
     return stack2.pop()
