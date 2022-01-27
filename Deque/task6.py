@@ -29,4 +29,4 @@ class Deque:
 
     def size(self):
         '''Метод определения длинны очереди.'''
-        return len(self.queue)
+        return len(self.deque)
