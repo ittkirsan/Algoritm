@@ -8,20 +8,26 @@ class HashTable:
         '''Иницилизация хеш-таблицы'''
         self.size = sz   # размер хэш-таблицы
         self.step = stp  # длина шага для поиска следующего свободного слота
-        self.__slots = [None] * self.size
+        self.slots = [None] * self.size
 
     def hash_fun(self, value):
+        if not isinstance(value, str):
+            return None
+
         return sum(value.encode('utf-8')) % self.size
 
-    def seek_slot(self, value):
+    def seek_slot(self, value: str):
         '''Поиск слота'''
+        if not isinstance(value, str):
+            return None
+
         index = self.hash_fun(value)
         position_count = index
         iter_count = self.size
         while iter_count >= 0:
-            if self.__slots[position_count] == None:
+            if self.slots[position_count] == None:
                 return position_count
-            elif self.__slots[position_count] == value:
+            elif self.slots[position_count] == value:
                 return position_count
             else:
                 position_count += self.step
@@ -33,7 +39,7 @@ class HashTable:
     def put(self, value):
         '''Помещение значения в слот'''
         if self.seek_slot(value) != None:
-            self.__slots[self.seek_slot(value)] = value
+            self.slots[self.seek_slot(value)] = value
             return self.seek_slot(value)
         return None
 
@@ -41,6 +47,6 @@ class HashTable:
         '''Поиск значение в слоте'''
         find_index = self.seek_slot(value)
         if find_index != None:
-            if self.__slots[find_index] == value:
+            if self.slots[find_index] == value:
                 return find_index
         return None
