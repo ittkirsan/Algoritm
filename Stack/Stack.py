@@ -16,7 +16,7 @@ class Stack:
         else:
             return None
 
-    def push(self, value):
+    def add_item_in_tail(self, value):
         '''Метод вставки в хвост.'''
         self.stack.append(value)
 

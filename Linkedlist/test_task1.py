@@ -1,21 +1,21 @@
 
 import unittest
 import random
-from task1 import Node, LinkedList
+from task1 import Node, SimpleLinkedList
 from task1_8 import SumEqualLinkedList
 
 
 class TestLinkedList(unittest.TestCase):
     def setUp(self):
-        self.empty_LinkedList = LinkedList()
+        self.empty_LinkedList = SimpleLinkedList()
 
-        self.LinkedList_with_one_element = LinkedList()
+        self.LinkedList_with_one_element = SimpleLinkedList()
         self.node = Node(33)
         self.node1_11 = Node(15)
         self.node1_12 = Node(16)
         self.LinkedList_with_one_element.add_in_tail(self.node)
 
-        self.LinkedList_with_10_elements = LinkedList()
+        self.LinkedList_with_10_elements = SimpleLinkedList()
         self.node_1 = Node(15)
         self.node_2 = Node(20)
         self.node_3 = Node(25)
@@ -37,14 +37,14 @@ class TestLinkedList(unittest.TestCase):
         self.LinkedList_with_10_elements.add_in_tail(self.node_9)
         self.LinkedList_with_10_elements.add_in_tail(self.node_10)
 
-        self.LinkedList_many_elements = LinkedList()
+        self.LinkedList_many_elements = SimpleLinkedList()
         self.N = random.randint(1, 200)
         for i in range(self.N):
             self.LinkedList_many_elements.add_in_tail(
                 Node(random.randint(1, 500)))
 
-        self.LinkedList_5_elem1 = LinkedList()
-        self.LinkedList_5_elem2 = LinkedList()
+        self.LinkedList_5_elem1 = SimpleLinkedList()
+        self.LinkedList_5_elem2 = SimpleLinkedList()
         self.node_1s = Node(15)
         self.node_2s = Node(20)
         self.node_3s = Node(25)
@@ -208,7 +208,7 @@ class TestLinkedList(unittest.TestCase):
     # функция суммы двух LinkedList
 
     def test_SumEqualLinkedList(self):
-        #self.assertEqual([], SumEqualLinkedList(LinkedList(), self.empty_LinkedList))
+
         summa_Linkedlists = SumEqualLinkedList(
             self.LinkedList_5_elem1, self.LinkedList_5_elem2)
         self.assertEqual(5, summa_Linkedlists.len())

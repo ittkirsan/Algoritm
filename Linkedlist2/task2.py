@@ -15,7 +15,7 @@ class Node:
         self.next = None
 
 
-class LinkedList2:
+class DoubleLinkedList:
     '''Класс для представления двунаправленных списков.'''
 
     def __init__(self):
@@ -33,7 +33,7 @@ class LinkedList2:
             item.prev = self.tail
         self.tail = item
 
-    # 2.1. Добавьте в класс LinkedList2 метод поиска первого узла по его значению.
+    # 2.1. Добавьте в класс DoubleLinkedList метод поиска первого узла по его значению.
     def find(self, val):
         '''Mетод поиска первого узла по его значению.'''
         node = self.head
@@ -43,7 +43,7 @@ class LinkedList2:
             node = node.next
         return None
 
-    # 2.2. Добавьте в класс LinkedList2 метод поиска всех узлов
+    # 2.2. Добавьте в класс DoubleLinkedList метод поиска всех узлов
     # по конкретному значению (возвращается список найденных узлов).
     def find_all(self, val):
         '''Mетод поиска всех узлов по конкретному значению. Возращает список Node'''
@@ -73,13 +73,13 @@ class LinkedList2:
                     return
             node = node.next
 
-    # 2.7. Добавьте в класс LinkedList2 метод очистки всего содержимого (создание пустого списка)
+    # 2.7. Добавьте в класс DoubleLinkedList метод очистки всего содержимого (создание пустого списка)
     def clean(self):
         '''Метод очистки списка.'''
         self.head = None
         self.tail = None
 
-    # 2.8. Добавьте в класс LinkedList2 метод вычисления текущей длины списка
+    # 2.8. Добавьте в класс DoubleLinkedList метод вычисления текущей длины списка
     def len(self):
         '''Метод вычесления длинны двунаправленного списка. Возвращает длинну списка.'''
         count: int = 0

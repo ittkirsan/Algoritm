@@ -10,11 +10,11 @@ class Queue:
         '''Инициализация хранилища данных.'''
         self.queue = []
 
-    def enqueue(self, item: Any):
+    def add_item_in_tail(self, item: Any):
         '''Метод вставки элемента в хвост очереди.'''
         self.queue.append(item)
 
-    def dequeue(self):
+    def pop_item(self):
         '''Метод выдачи элемента из головы очереди.'''
         if self.size() != 0:
             return self.queue.pop(0)

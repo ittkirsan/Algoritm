@@ -1,10 +1,10 @@
-from task1 import LinkedList, Node
+from task1 import SimpleLinkedList, Node
 
 
-def SumEqualLinkedList(LList1: LinkedList, LList2: LinkedList) -> LinkedList:
-    LList_result: LinkedList = LinkedList()
+def SumEqualLinkedList(LList1: SimpleLinkedList, LList2: SimpleLinkedList) -> SimpleLinkedList:
+    LList_result: SimpleLinkedList = SimpleLinkedList()
     if LList1.len() == LList2.len():
-        node1: Node = LList1.head  # встаем вначало списка 1
+        node1: Node = LList1.head  # вSimpleLinkedListстаем вначало списка 1
         node2: Node = LList2.head  # встаем вначало списка 2
         while node1 is not None:
             sum: int = node1.value + node2.value  # сумируем значение узлов

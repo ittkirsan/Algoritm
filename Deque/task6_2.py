@@ -8,8 +8,8 @@ def palindrome(string: str):
     string = string.replace(' ', '')
     string = string.lower()
     for i in string:
-        deq.addTail(i)
-    for i in range(deq.size() // 2):
-        if deq.removeFront() != deq.removeTail():
+        deq.add_item_in_tail(i)
+    for i in range(deq.len_deque() // 2):
+        if deq.delete_head() != deq.removeTail():
             return False
     return True

@@ -6,7 +6,7 @@ class Node:
         self.next = None
 
 
-class LinkedList:
+class SimpleLinkedList:
 
     def __init__(self):
         self.head = None
@@ -85,7 +85,7 @@ class LinkedList:
         self.tail = None
 
     # 1.5. Добавьте в класс LinkedList метод вычисления текущей длины списка
-    def len(self):
+    def len_simple_linkedList(self):
         count = 0
         if self.head is None:
             return 0
