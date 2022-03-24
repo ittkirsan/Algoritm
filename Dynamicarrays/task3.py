@@ -27,7 +27,7 @@ class DynArray:
             raise IndexError('Index is out of bounds')
         return self.array[i]
 
-    def resize(self, new_capacity):
+    def resize_dinarray_buffer_capacity(self, new_capacity):
         '''Метод меняющий размер емкости буфера массива.'''
         new_array = self.make_array(new_capacity)
         for i in range(self.count):
@@ -35,20 +35,20 @@ class DynArray:
         self.array = new_array
         self.capacity = new_capacity
 
-    def append(self, itm):
+    def add_element_end_array(self, itm):
         '''Метод добавляет элемент в конец массива.'''
         if self.count == self.capacity:
-            self.resize(2*self.capacity)
+            self.resize_dinarray_buffer_capacity(2*self.capacity)
         self.array[self.count] = itm
         self.count += 1
 
-    def insert(self, i, itm):
+    def insert_object_to_position(self, i, itm):
         '''Метод добавляет объект itm в позицию i, начиная с 0.'''
         if i < 0 or i > self.count:
             raise IndexError('Index is out of bounds')
 
         if self.count == self.capacity:
-            self.resize(2*self.capacity)
+            self.resize_dinarray_buffer_capacity(2*self.capacity)
 
         if i == self.count:
             self.array[self.count] = itm
@@ -61,7 +61,7 @@ class DynArray:
             self.array[k] = itm
             self.count += 1
 
-    def delete(self, i):
+    def delete_object_at_position(self, i):
         '''Метод удаляее объект в позиции i.'''
         if i < 0 or i >= self.count:
             raise IndexError('Index is out of bounds')
@@ -72,6 +72,6 @@ class DynArray:
         if self.count < self.capacity * 0.5:
             new_capacity = int(self.capacity/1.5)
             if new_capacity < 16:
-                self.resize(16)
+                self.resize_dinarray_buffer_capacity(16)
             else:
-                self.resize(new_capacity)
+                self.resize_dinarray_buffer_capacity(new_capacity)

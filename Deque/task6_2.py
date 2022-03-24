@@ -3,7 +3,7 @@
 from task6 import *
 
 
-def palindrome(string: str):
+def is_palindrome(string: str):
     deq = Deque()
     string = string.replace(' ', '')
     string = string.lower()

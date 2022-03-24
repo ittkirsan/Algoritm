@@ -35,7 +35,7 @@ class OrderedList:
         else:
             return 0
 
-    def add(self, value):
+    def add_new_node_by_value(self, value):
         '''Метод добавления знаяения в положенное место.
          С учётом его значения и признака упорядоченности'''
         new_node = Node(value)
@@ -70,7 +70,7 @@ class OrderedList:
         new_node.prev = self.tail
         self.tail = new_node
 
-    def find(self, val):
+    def find_node_value(self, val):
         '''Метод поиска элемента по значению.С учетом возрастания функции или убывания.'''
         node = self.head
         if self.__ascending:
@@ -85,7 +85,7 @@ class OrderedList:
             node = node.next
         return None
 
-    def delete(self, val, all=False):
+    def delete_node_value(self, val, all=False):
         '''Метод удаления одого или всех узлов по значению.'''
         node = self.head
         if self.__ascending:
@@ -109,7 +109,7 @@ class OrderedList:
                     return
             node = node.next
 
-    def clean(self, asc):
+    def clean_orderlist(self, asc):
         '''Метод очистки списка.'''
         self.__ascending = asc
         self.head = None

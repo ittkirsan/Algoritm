@@ -25,7 +25,7 @@ class SimpleLinkedList:
             print(node.value)
             node = node.next
 
-    def find(self, val):
+    def find_node_value(self, val):
         node = self.head
         while node is not None:
             if node.value == val:
