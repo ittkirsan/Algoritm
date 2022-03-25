@@ -12,8 +12,8 @@ class Node:
 
     def __init__(self, val: Any):
         '''Устанавливает все необходимые атрибуты для Node.'''
-        self.value = val
-        self.prev = None
+        self._value = val
+        self._prev = None
         self.next = None
 
 
@@ -41,7 +41,7 @@ class OrderedList:
         new_node = Node(value)
         if self.head is None:
             self.head, self.tail = new_node, new_node
-            new_node.prev, new_node.next = None, None
+            new_node._prev, new_node.next = None, None
             return None
 
         if self.__ascending:
@@ -51,23 +51,23 @@ class OrderedList:
 
         node = self.head
         while node is not None:
-            if self.compare(node.value, value) == flag:
+            if self.compare(node._value, value) == flag:
                 if node == self.head:
                     new_node.next = self.head
-                    self.head.prev = new_node
+                    self.head._prev = new_node
                     self.head = new_node
                     return None
 
                 else:
-                    node.prev.next = new_node
-                    new_node.prev = node.prev
+                    node._prev.next = new_node
+                    new_node._prev = node._prev
                     new_node.next = node
-                    node.prev = new_node
+                    node._prev = new_node
                     return None
             node = node.next
 
         self.tail.next = new_node
-        new_node.prev = self.tail
+        new_node._prev = self.tail
         self.tail = new_node
 
     def find_node_value(self, val):
@@ -78,9 +78,9 @@ class OrderedList:
         else:
             flag = -1
         while node is not None:
-            if self.compare(node.value, val) == 0:
+            if self.compare(node._value, val) == 0:
                 return node
-            elif self.compare(node.value, val) == flag:
+            elif self.compare(node._value, val) == flag:
                 return None
             node = node.next
         return None
@@ -93,17 +93,17 @@ class OrderedList:
         else:
             flag = -1
         while node is not None:
-            if self.compare(node.value, val) == flag:
+            if self.compare(node._value, val) == flag:
                 return
-            if self.compare(node.value, val) == 0:
-                if node.prev is None:
+            if self.compare(node._value, val) == 0:
+                if node._prev is None:
                     self.head = node.next
                 else:
-                    node.prev.next = node.next
+                    node._prev.next = node.next
                 if node.next is not None:
-                    node.next.prev = node.prev
+                    node.next._prev = node._prev
                 else:
-                    self.tail = node.prev
+                    self.tail = node._prev
 
                 if not all:
                     return
